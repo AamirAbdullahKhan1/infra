@@ -1,34 +1,51 @@
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css';
+const apiKey = import.meta.env.VITE_MAP_API_KEY;
 
 const MapComponent = () => {
   useEffect(() => {
     // Create the map centered on India
     const map = L.map('map', {
-      center: [22.5937, 78.9629],
-      zoom: 3,
-      minZoom: 5,
-      maxZoom: 6,
+      center: [20.5937, 78.9629],
+      zoom: 4,
+      minZoom: 4,
+      maxZoom: 7,
       zoomControl: true,
     });
 
-    // Restrict map bounds to India
+    // Restrict map bounds to India and surrounding area
     const indiaBounds = [
-      [6.4627, 68.1097],
-      [42.5133, 99.3954],
+      [6.4626999, 68.1097],
+      [35.6745457, 97.39535869999999],
     ];
     map.setMaxBounds(indiaBounds);
     map.on('drag', () => {
       map.panInsideBounds(indiaBounds, { animate: false });
     });
 
-    // Custom styled map tiles
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-      subdomains: 'abcd',
+    // MapTiler API key (replace with your own)
+    const mapTilerKey = apiKey;
+
+    // MapTiler map tiles
+    L.tileLayer(`https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=${mapTilerKey}`, {
+      attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>',
       maxZoom: 20
     }).addTo(map);
+
+    // Add GeoJSON layer for India's borders
+    fetch('https://raw.githubusercontent.com/HindustanTimesLabs/shapefiles/master/india_states.geojson')
+      .then(response => response.json())
+      .then(data => {
+        L.geoJSON(data, {
+          style: {
+            color: '#2563eb',
+            weight: 2,
+            fillOpacity: 0.1,
+            fillColor: '#3b82f6'
+          }
+        }).addTo(map);
+      });
 
     // Custom icon using SVG for better quality
     const customIcon = L.divIcon({
@@ -63,7 +80,7 @@ const MapComponent = () => {
         info: { equipment: 1123, labs: 549, centers: 58 }
       },
       {
-        name: 'Banglore',
+        name: 'Bangalore',
         lat: 12.9716,
         lon: 77.5946,
         info: { equipment: 1123, labs: 549, centers: 58 }
@@ -115,14 +132,7 @@ const MapComponent = () => {
         lat: 20.2961,
         lon: 85.8245,
         info: { equipment: 1123, labs: 549, centers: 58 }
-      },
-      {
-        name: 'Chennai',
-        lat: 13.0827,
-        lon: 80.2707,
-        info: { equipment: 1123, labs: 549, centers: 58 }
-      },
-      
+      }
     ];
 
     // Add markers with custom popups
@@ -163,7 +173,7 @@ const MapComponent = () => {
   }, []);
 
   return (
-    <section className="relative w-full bg-gradient-to-b from-white to-blue-50 ">
+    <section className="relative w-full bg-gradient-to-b from-white to-blue-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-10">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">

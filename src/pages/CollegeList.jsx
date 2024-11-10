@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 const collegesData = [
   { name: "Indian Institute of Technology Delhi", type: "Engineering & Technology", location: "New Delhi", ranking: 1 },
+  { name: "SRM Institute of Science and Technology", type: "Engineering & Technology", location: "Chennai", ranking: 24 },
   { name: "Indian Institute of Science", type: "Science & Research", location: "Bangalore", ranking: 2 },
   { name: "Indian Institute of Technology Bombay", type: "Engineering & Technology", location: "Mumbai", ranking: 3 },
   { name: "All India Institute of Medical Sciences", type: "Medical Sciences", location: "New Delhi", ranking: 4 },
@@ -16,6 +17,8 @@ const collegesData = [
   { name: "Indian Institute of Technology Kharagpur", type: "Engineering & Technology", location: "Kharagpur", ranking: 13 },
   { name: "Indian Institute of Technology Roorkee", type: "Engineering & Technology", location: "Roorkee", ranking: 14 },
   { name: "Savitribai Phule Pune University", type: "Multidisciplinary", location: "Pune", ranking: 15 },
+  { name: "Vellore Institute of Technology", type: "Engineering & Technology", location: "Chennai", ranking: 8 },
+  { name: "Rajalaskhmi Engineering College", type: "Engineering & Technology", location: "Chennai", ranking: 28 },
 ];
 
 const CollegeCard = ({ name, type, location, ranking }) => (
@@ -25,7 +28,7 @@ const CollegeCard = ({ name, type, location, ranking }) => (
     <p className="text-gray-600 mb-2">{location}</p>
     <div className="flex justify-between items-center mt-4">
       <span className="text-sm text-gray-500">Ranking: {ranking}</span>
-      <a href="#" className="text-blue-600 hover:underline text-sm">View Details</a>
+      <a href="#" className="text-blue-600 hover:underline text-sm font-medium uppercase">View Details</a>
     </div>
   </div>
 );

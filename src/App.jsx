@@ -12,6 +12,9 @@ import Resource from './pages/Resources'
 import AboutPage from './pages/About'
 import ContactPage from './pages/Contact'
 import CollegesPage from './pages/CollegeList'
+import EquipmentPage from './pages/Equipment'
+import ResearchLabsPage from './pages/ResearchLabs'
+import IncubationCentersPage from './pages/Incubation'
 
 const router = createBrowserRouter([
   {
@@ -68,6 +71,39 @@ const router = createBrowserRouter([
       <>
       <Navbar/>
       <CollegesPage/>
+      <Footer/>
+      </>
+    )
+  },
+
+  {
+    path: '/equipments',
+    element: (
+      <>
+      <Navbar/>
+      <EquipmentPage/>
+      <Footer/>
+      </>
+    )
+  },
+
+  {
+    path: '/researchlabs',
+    element: (
+      <>
+      <Navbar/>
+      <ResearchLabsPage/>
+      <Footer/>
+      </>
+    )
+  },
+
+  {
+    path: '/incubation',
+    element: (
+      <>
+      <Navbar/>
+      <IncubationCentersPage/>
       <Footer/>
       </>
     )
