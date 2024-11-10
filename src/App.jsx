@@ -11,6 +11,7 @@ import Login from './pages/Login'
 import Resource from './pages/Resources'
 import AboutPage from './pages/About'
 import ContactPage from './pages/Contact'
+import CollegesPage from './pages/CollegeList'
 
 const router = createBrowserRouter([
   {
@@ -56,6 +57,17 @@ const router = createBrowserRouter([
       <>
       <Navbar/>
       <ContactPage/>
+      <Footer/>
+      </>
+    )
+  },
+
+  {
+    path: '/recommendedclg',
+    element: (
+      <>
+      <Navbar/>
+      <CollegesPage/>
       <Footer/>
       </>
     )

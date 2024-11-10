@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowRight, Building2 } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function Hero() {
   return (
@@ -20,7 +21,7 @@ export default function Hero() {
                 <ArrowRight className="ml-2 h-5 w-5" />
               </button>
               <button className="inline-flex items-center px-6 py-3 bg-white text-indigo-600 font-semibold rounded-lg border-2 border-indigo-600 hover:bg-indigo-50 transition-colors">
-                Browse Equipment
+                <Link to='/resources'>Browse Equipment</Link>
               </button>
             </div>
           </div>

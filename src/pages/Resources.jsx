@@ -128,7 +128,7 @@ export default function Resource() {
                   <RecommendedCollege key={index} {...college} />
                 ))}
               </div>
-              <Link to="/colleges" className="mt-4 inline-block text-blue-600 hover:underline">
+              <Link to="/recommendedclg" className="mt-4 inline-block text-blue-600 hover:underline">
                 View all colleges
               </Link>
             </div>
