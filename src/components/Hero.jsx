@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Building2 } from 'lucide-react';
+import { ArrowRight, Building2, MoveRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export default function Hero() {
@@ -16,11 +16,11 @@ export default function Hero() {
               Transform your research possibilities with InfraShare.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row gap-4">
-              <button className="inline-flex items-center px-6 py-3 bg-indigo-600 text-white font-semibold rounded-lg hover:bg-indigo-700 transition-colors">
+              <button className="inline-flex items-center px-6 py-3 bg-indigo-600 text-white font-semibold rounded-lg hover:bg-emerald-300 transition-colors hover:text-black">
                 Get Started
                 <ArrowRight className="ml-2 h-5 w-5" />
               </button>
-              <button className="inline-flex items-center px-6 py-3 bg-white text-indigo-600 font-semibold rounded-lg border-2 border-indigo-600 hover:bg-indigo-50 transition-colors">
+              <button className="inline-flex items-center px-6 py-3 bg-white text-indigo-600 font-semibold rounded-lg border-2 border-indigo-600 hover:bg-emerald-300 hover:text-black hover:border-emerald-300 duration-300 transition-colors">
                 <Link to='/resources'>Browse Equipment</Link>
               </button>
             </div>
@@ -31,14 +31,14 @@ export default function Hero() {
               alt="Laboratory Equipment"
               className="rounded-lg shadow-xl"
             />
-            <div className="absolute -bottom-6 -left-6 bg-white p-4 rounded-lg shadow-lg z-40">
+            <div className="absolute -bottom-8 -left-2 bg-emerald-100 border-2 border-gray-400 p-4 rounded-lg shadow-xl z-40">
               <div className="flex items-center space-x-4">
-                <div className="bg-indigo-100 p-2 rounded-lg">
+                <div className="bg-white p-3 rounded-lg">
                   <Building2 className="h-6 w-6 text-indigo-600" />
                 </div>
                 <div>
                   <p className="font-semibold text-gray-900">100+</p>
-                  <p className="text-sm text-gray-600">Partner Institutions</p>
+                  <p className="text-sm text-zinc-900 font-medium">Partner Institutions</p>
                 </div>
               </div>
             </div>

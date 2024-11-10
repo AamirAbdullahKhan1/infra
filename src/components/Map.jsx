@@ -49,12 +49,12 @@ const MapComponent = () => {
 
     // Custom icon using SVG for better quality
     const customIcon = L.divIcon({
-      html: `<svg width="30" height="30" viewBox="0 0 24 24" fill="#2563eb" stroke="#ffffff" stroke-width="2">
+      html: `<svg width="35" height="35" viewBox="0 0 24 24" fill="#2563eb" stroke="#ffffff" stroke-width="2">
               <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
               <circle cx="12" cy="10" r="3" fill="#ffffff"></circle>
             </svg>`,
       className: 'custom-pin',
-      iconSize: [30, 30],
+      iconSize: [40, 40],
       iconAnchor: [12, 24],
       popupAnchor: [0, -24],
     });
