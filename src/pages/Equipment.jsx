@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const equipmentData = [
   { id: 1, name: "High-Performance Liquid Chromatograph", category: "Chemistry", institution: "IIT Bombay", availability: "Available", description: "Used for separating, identifying, and quantifying components in a mixture." },
@@ -31,7 +32,7 @@ const EquipmentCard = ({ name, category, institution, availability, description 
           {availability}
         </span>
         <button className="text-blue-600 hover:text-blue-800 text-sm font-medium">
-          Book Now
+          <Link to='/equipmentdetails'>Book Now</Link>
         </button>
       </div>
     </div>

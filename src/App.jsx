@@ -15,6 +15,7 @@ import CollegesPage from './pages/CollegeList'
 import EquipmentPage from './pages/Equipment'
 import ResearchLabsPage from './pages/ResearchLabs'
 import IncubationCentersPage from './pages/Incubation'
+import EquipmentDetailPage from './pages/EquipmentDetails'
 
 const router = createBrowserRouter([
   {
@@ -104,6 +105,17 @@ const router = createBrowserRouter([
       <>
       <Navbar/>
       <IncubationCentersPage/>
+      <Footer/>
+      </>
+    )
+  },
+
+  {
+    path: '/equipmentdetails',
+    element: (
+      <>
+      <Navbar/>
+      <EquipmentDetailPage/>
       <Footer/>
       </>
     )
